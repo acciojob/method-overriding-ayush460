@@ -1,30 +1,25 @@
 package com.driver;
 
 public class Main {
-    public static class Product{
-        public int product(int x, int y) {
-            return x+y;
-
+    static class A{
+        public String meth(){
+            return "Invoking method from class A";
         }
-        public int product(int x, int y, int z) {
-            return x+y+z;
-
+    }
+    static class B extends A{
+        @Override
+        public String meth(){
+            return "Method is overridden in Extendend class B";
         }
-        public double product(double x, double y) {
-            return x*y;
-
-        }
-
-
-
 
     }
-    public static void main(String[] args) {
-        Product p=new Product();
-        p.product(5,6);
-        p.product(5,6,7);
-        p.product(8,9);
+    public static  void main(String args[]){
+        B b=new B();
+        b.meth();
+        B b1=new B();
+        b1.meth();
     }
-
-
 }
+
+
+
